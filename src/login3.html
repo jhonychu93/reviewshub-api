@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>GrapesJS</title>
+    <link rel="stylesheet" href="dist/css/grapes.min.css">
+    <link href="https://fonts.google.com/specimen/Roboto" rel="stylesheet" type="text/css">
+    <script src="grapes.min.js"></script>
+  </head>
+
+  <body>
+    <div class="login-container-outside">    
+    <div class="login-container">    
+        <h1><?php echo "This message is from server side." ?></h1>
+        <h2 class="login-form-title" style="font-family:sans-serif"> Reviews Hub Login </h2>
+        <form name="f1" action = "http://localhost:3000/auth" onsubmit = "return validation()" method = "POST">  
+            <div class="container">
+                <label for="uname" style="font-family:sans-serif"><b>Username</b></label>
+                <input type="text" placeholder="Enter Username" name="username" id="username" >
+        
+                <label for="psw" style="font-family: 'Roboto', sans-serif"><b>Password</b></label>
+                <input type="password" placeholder="Enter Password" name="password" id="password" required>
+                
+                <button type="submit" id="btn">Login</button>
+                <!-- <label>
+                <input type="checkbox" checked="checked" name="remember"> Remember me 
+                </label> -->
+            </div>
+        </form>  
+    </div>
+    </div>
+        
+        <!--
+        <div class="container" style="background-color">
+            <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+            <span class="psw">Forgot <a href="#">password?</a></span>
+        </div> -->
+
+    </div>
+
+
+    <script>  
+        function validation()  
+        {  
+            var id=document.f1.user.value;  
+            var ps=document.f1.pass.value;  
+            if(id.length=="" && ps.length=="") {  
+                alert("User Name and Password fields are empty");  
+                return false;  
+            }  
+            else  
+            {  
+                if(id.length=="") {  
+                    alert("User Name is empty");  
+                    return false;  
+                }   
+                if (ps.length=="") {  
+                alert("Password field is empty");  
+                return false;  
+                }  
+            }                             
+        }  
+    </script>  
+
+
+</body>
+</html>
